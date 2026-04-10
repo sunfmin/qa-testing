@@ -64,3 +64,22 @@ Chronological record of wiki operations.
   - YAML test file format with plain-English steps
   - 5-phase implementation plan (~10 weeks)
 - Updated index.md
+
+## [2026-04-10] update | Iris spec: real device support + CLI runner + Claude Code vision
+- Major spec update to wiki/analyses/drizz-clone-spec.md
+- Added real physical device support:
+  - iOS real devices via WebDriverAgent (WDA) over USB/Wi-Fi
+  - Android real devices via adb (works identically to emulators)
+  - `iris setup ios-device` command for one-time WDA setup
+  - DeviceManager with unified discovery across all device types
+- Added CLI runner (iris):
+  - Headless command-line tool sharing Core Engine with GUI
+  - JUnit XML, JSON, HTML report output
+  - GitHub Actions integration examples (simulator + real device jobs)
+  - `.iris.yaml` project-level config file
+  - Exit codes for CI pass/fail
+- Changed vision approach to Claude Code integration:
+  - Primary: Claude Code's native vision (Read tool for screenshots)
+  - Fallback: Direct Anthropic API for standalone CI/CD
+  - Removed OpenAI/Gemini/Ollama providers (simplified)
+- Restructured to 6-phase plan (~12 weeks), CLI-first approach
