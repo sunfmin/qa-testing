@@ -83,3 +83,17 @@ Chronological record of wiki operations.
   - Fallback: Direct Anthropic API for standalone CI/CD
   - Removed OpenAI/Gemini/Ollama providers (simplified)
 - Restructured to 6-phase plan (~12 weeks), CLI-first approach
+
+## [2026-04-10] experiment | Claude Vision + WDA on real iPhone
+- Tested on iPhone 17 Pro Max (iOS 26.3) via WebDriverAgent over USB
+- Setup: Appium xcuitest-driver → built WDA → iproxy 8100 → W3C Actions API
+- Test flow: Home → Spotlight → Settings → General → About (read device info)
+- Created wiki/analyses/claude-vision-iphone-experiment.md
+- Key findings:
+  - Pure vision coordinate estimation is unreliable (100-200pt Y-axis error)
+  - WDA element finding is instant and exact
+  - Vision excels at understanding/assertions, fails at precise locating
+  - Hybrid approach (WDA for actions + Vision for assertions) is optimal
+  - This reframes Midscene.js: its pure-vision locating is fundamentally slower and less precise than WDA accessibility tree
+  - Midscene still wins for canvas/WebGL and cross-platform visual matching
+  - Recommended Iris architecture: WDA element find (primary) → Claude vision fallback → Claude assertions

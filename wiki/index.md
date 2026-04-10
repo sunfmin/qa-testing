@@ -21,3 +21,4 @@ A structured, interlinked knowledge base for QA testing automation.
 - [AI Testing Tools Comparison](analyses/ai-testing-tools-comparison.md) — Summary: only 2 of 4 AI tools support native iOS
 - [Drizz Clone Spec (Iris)](analyses/drizz-clone-spec.md) — Local macOS app spec: Vision AI mobile testing, Swift+SwiftUI, BYO-LLM, open source
 - [Existing Vision Testing Tools](analyses/existing-vision-testing-tools.md) — Landscape: Midscene.js (12.6k stars), ios-simulator-mcp, appium-mcp, Claude Computer Use. Recommends pivot to composition over greenfield.
+- [Claude Vision + WDA iPhone Experiment](analyses/claude-vision-iphone-experiment.md) — Real device test on iPhone 17 Pro Max. Key finding: pure vision is bad at coordinates (100-200pt error), hybrid WDA+vision is optimal. Reframes Midscene vs Iris approach.
