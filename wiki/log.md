@@ -97,3 +97,15 @@ Chronological record of wiki operations.
   - This reframes Midscene.js: its pure-vision locating is fundamentally slower and less precise than WDA accessibility tree
   - Midscene still wins for canvas/WebGL and cross-platform visual matching
   - Recommended Iris architecture: WDA element find (primary) → Claude vision fallback → Claude assertions
+
+## [2026-04-10] analysis | Autonomous Bug Fix Workflow
+- Created wiki/analyses/auto-bug-fix-workflow.md
+- 8-phase workflow: PARSE → REPRODUCE → EVIDENCE → ANALYZE → TEST → FIX → VERIFY → DELIVER
+- Key design decisions:
+  - Integration test first (100x faster, deterministic), UI test for final verification
+  - Hybrid device control (WDA actions + Claude vision assertions)
+  - Confidence scoring: stop and hand off to human if below threshold
+  - Video evidence via screenshot stitching (ffmpeg) for real iOS devices
+  - JIRA integration via Atlassian MCP (already installed)
+  - All tools already available in Claude Code (no new infrastructure needed)
+- Three trigger modes: manual prompt, scheduled cron, JIRA webhook
