@@ -47,3 +47,20 @@ Chronological record of wiki operations.
   - 公司注册于印度班加罗尔，1-10 人团队
   - 无公开源码、专利、技术论文
   - 视觉缓存是语义感知（非像素级），具体算法未公开
+
+## [2026-04-10] maintenance | Bilingual rewrite
+- Updated CLAUDE.md rule: English first, complete Chinese translation at end under `# 中文翻译`
+- Rewrote all 8 wiki pages to bilingual format
+- Pushed to GitHub: github.com/sunfmin/qa-testing
+
+## [2026-04-10] analysis | Drizz Clone Spec (Iris)
+- Created wiki/analyses/drizz-clone-spec.md — full product specification for a local macOS Drizz clone
+- Codename: Iris
+- Key design decisions:
+  - Swift + SwiftUI native macOS app
+  - BYO-LLM: protocol-based VLM provider (OpenAI, Anthropic, Google, Ollama)
+  - Device control via simctl (iOS) and adb (Android)
+  - Visual cache with perceptual hashing (pHash) + SQLite
+  - YAML test file format with plain-English steps
+  - 5-phase implementation plan (~10 weeks)
+- Updated index.md

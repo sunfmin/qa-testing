@@ -18,3 +18,4 @@ A structured, interlinked knowledge base for QA testing automation.
 ## Analyses
 - [AI-Powered Mobile Testing Tools (2025-2026)](analyses/ai-mobile-testing-tools-2025-2026.md) — Deep comparison of Drizz, testRigor, Katalon TrueTest, and TestSprite
 - [AI Testing Tools Comparison](analyses/ai-testing-tools-comparison.md) — Summary: only 2 of 4 AI tools support native iOS
+- [Drizz Clone Spec (Iris)](analyses/drizz-clone-spec.md) — Local macOS app spec: Vision AI mobile testing, Swift+SwiftUI, BYO-LLM, open source
