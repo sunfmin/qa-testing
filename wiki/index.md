@@ -11,6 +11,7 @@ A structured, interlinked knowledge base for QA testing automation.
 - [XCUITest](entities/xcuitest.md) — Apple's native UI testing framework, fastest iOS execution, Xcode-integrated
 - [Detox](entities/detox.md) — Gray-box E2E testing for React Native, in-process synchronization
 - [Drizz](entities/drizz.md) — Vision AI mobile testing, plain English tests, no selectors needed
+- [Midscene.js](entities/midscene-js.md) — ByteDance's vision-based UI automation: iOS/Android/Web/Desktop, YAML CLI, MCP servers, 12.5k stars
 
 ## Concepts
 - [E2E Testing Strategy](concepts/e2e-testing-strategy.md) — Testing pyramid, what to test, execution guidelines for mobile E2E.
@@ -19,3 +20,4 @@ A structured, interlinked knowledge base for QA testing automation.
 - [AI-Powered Mobile Testing Tools (2025-2026)](analyses/ai-mobile-testing-tools-2025-2026.md) — Deep comparison of Drizz, testRigor, Katalon TrueTest, and TestSprite
 - [AI Testing Tools Comparison](analyses/ai-testing-tools-comparison.md) — Summary: only 2 of 4 AI tools support native iOS
 - [Drizz Clone Spec (Iris)](analyses/drizz-clone-spec.md) — Local macOS app spec: Vision AI mobile testing, Swift+SwiftUI, BYO-LLM, open source
+- [Existing Vision Testing Tools](analyses/existing-vision-testing-tools.md) — Landscape: Midscene.js (12.6k stars), ios-simulator-mcp, appium-mcp, Claude Computer Use. Recommends pivot to composition over greenfield.
