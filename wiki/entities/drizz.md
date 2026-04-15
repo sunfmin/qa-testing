@@ -13,22 +13,22 @@ A Vision AI-powered mobile E2E testing platform. Write tests in plain English â€
 
 ## Key Facts
 
-| Attribute | Value |
-|-----------|-------|
-| Type | Vision AI, black-box |
-| Test Language | Plain English |
-| iOS Support | Simulator (Desktop App) + Real Device (Cloud) |
-| License | Commercial (closed source) |
-| Founded | July 2025 (seed $2.7M) |
-| Founders | Ex-Amazon, Coinbase, Gojek engineers |
-| Setup Time | Minutes |
+| Attribute     | Value                                         |
+| ------------- | --------------------------------------------- |
+| Type          | Vision AI, black-box                          |
+| Test Language | Plain English                                 |
+| iOS Support   | Simulator (Desktop App) + Real Device (Cloud) |
+| License       | Commercial (closed source)                    |
+| Founded       | July 2025 (seed $2.7M)                        |
+| Founders      | Ex-Amazon, Coinbase, Gojek engineers          |
+| Setup Time    | Minutes                                       |
 
 ## Two Components
 
-| Component | Purpose | Access |
-|-----------|---------|--------|
-| **Drizz Desktop App** | Local test authoring, simulator connection, debugging | macOS arm64 installer |
-| **Drizz Cloud** | Remote execution, CI/CD, reporting, real device management | app.drizz.dev |
+| Component             | Purpose                                                    | Access                |
+| --------------------- | ---------------------------------------------------------- | --------------------- |
+| **Drizz Desktop App** | Local test authoring, simulator connection, debugging      | macOS arm64 installer |
+| **Drizz Cloud**       | Remote execution, CI/CD, reporting, real device management | app.drizz.dev         |
 
 ## How It Works (Vision AI)
 

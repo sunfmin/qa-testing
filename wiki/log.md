@@ -109,3 +109,16 @@ Chronological record of wiki operations.
   - JIRA integration via Atlassian MCP (already installed)
   - All tools already available in Claude Code (no new infrastructure needed)
 - Three trigger modes: manual prompt, scheduled cron, JIRA webhook
+
+## [2026-04-15] ingest | WebDriverAgent Wiki
+- Ingested `raw/webdriveragent-wiki.md` — comprehensive Chinese-language WDA technical reference
+- Created wiki/sources/webdriveragent-wiki.md — summary of architecture, API, setup, known issues
+- Created wiki/entities/webdriveragent.md — full entity page with API reference, config, version history
+- Updated wiki/entities/appium.md — added cross-reference to WDA entity, added source
+- Updated wiki/index.md — added source and entity entries
+- Key facts:
+  - WDA = XCTest bundle that runs forever, hosting HTTP server (8100) + MJPEG (9100)
+  - v12.0.0 released 2026-04-14, Node.js package fully TypeScript since v11.0.0
+  - 5 element locator strategies ranked: accessibility id > class name > predicate > class chain > xpath
+  - Can run independently of Appium — direct HTTP API, which is how Iris and auto-bug-fix use it
+  - Known Flutter v3.22+ incompatibility (GitHub #922)

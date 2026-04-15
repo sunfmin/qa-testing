@@ -13,14 +13,14 @@ Hands-on experiment using Claude Code's native image reading as the "VLM" to dri
 
 ## Setup
 
-| Component | Details |
-|-----------|---------|
-| Device | iPhone 17 Pro Max (iOS 26.3), USB connected |
-| WDA | Appium xcuitest-driver 10.43.0, built with `xcodebuild build-for-testing` |
-| Port forwarding | `iproxy 8100 8100` |
-| Vision engine | Claude Code (Opus 4.6) reading PNG screenshots via `Read` tool |
-| Actions | WDA W3C Actions API over HTTP |
-| Window size | 440x956 points |
+| Component       | Details                                                                   |
+| --------------- | ------------------------------------------------------------------------- |
+| Device          | iPhone 17 Pro Max (iOS 26.3), USB connected                               |
+| WDA             | Appium xcuitest-driver 10.43.0, built with `xcodebuild build-for-testing` |
+| Port forwarding | `iproxy 8100 8100`                                                        |
+| Vision engine   | Claude Code (Opus 4.6) reading PNG screenshots via `Read` tool            |
+| Actions         | WDA W3C Actions API over HTTP                                             |
+| Window size     | 440x956 points                                                            |
 
 ## Test Flow Executed
 
@@ -28,21 +28,21 @@ Hands-on experiment using Claude Code's native image reading as the "VLM" to dri
 Home screen → Spotlight search → Open Settings → General → About
 ```
 
-| Step | Action | Method | Result |
-|------|--------|--------|--------|
-| 1 | Open 抖音 from home screen | Vision estimated (169,141) | ✅ App opened |
-| 2 | Tap "我" (Profile) tab | Vision guessed (400,930) — wrong | ❌ Off by 33 points in Y |
-| 3 | Tap "我" again | WDA element find → (396,897) | ✅ Profile loaded |
-| 4 | Go home | WDA `pressButton: home` | ✅ |
-| 5 | Swipe left to App Library | Vision: swipe (350,500)→(50,500) | ✅ |
-| 6 | Swipe down for Spotlight | Vision: swipe (220,400)→(220,600) | ✅ |
-| 7 | Type "Settings" | WDA active element → `value` | ✅ Search results shown |
-| 8 | Tap Settings icon | Vision estimated (152,120) | ✅ Settings opened |
-| 9 | Tap "通用" (General) | Vision guessed (220,530) — wrong | ❌ Off by 205 points in Y |
-| 10 | Tap "通用" again | WDA element find → (220,735) | ✅ General page loaded |
-| 11 | Tap "关于本机" (About) | Vision guessed (220,250) — wrong | ❌ Off by 156 points in Y |
-| 12 | Tap "关于本机" again | WDA element find → (220,406) | ✅ About page loaded |
-| 13 | Read device info | Vision reads screenshot | ✅ iPhone 17 Pro Max, iOS 26.3, 2TB |
+| Step | Action                    | Method                            | Result                             |
+| ---- | ------------------------- | --------------------------------- | ---------------------------------- |
+| 1    | Open 抖音 from home screen  | Vision estimated (169,141)        | ✅ App opened                       |
+| 2    | Tap "我" (Profile) tab     | Vision guessed (400,930) — wrong  | ❌ Off by 33 points in Y            |
+| 3    | Tap "我" again             | WDA element find → (396,897)      | ✅ Profile loaded                   |
+| 4    | Go home                   | WDA `pressButton: home`           | ✅                                  |
+| 5    | Swipe left to App Library | Vision: swipe (350,500)→(50,500)  | ✅                                  |
+| 6    | Swipe down for Spotlight  | Vision: swipe (220,400)→(220,600) | ✅                                  |
+| 7    | Type "Settings"           | WDA active element → `value`      | ✅ Search results shown             |
+| 8    | Tap Settings icon         | Vision estimated (152,120)        | ✅ Settings opened                  |
+| 9    | Tap "通用" (General)        | Vision guessed (220,530) — wrong  | ❌ Off by 205 points in Y           |
+| 10   | Tap "通用" again            | WDA element find → (220,735)      | ✅ General page loaded              |
+| 11   | Tap "关于本机" (About)        | Vision guessed (220,250) — wrong  | ❌ Off by 156 points in Y           |
+| 12   | Tap "关于本机" again          | WDA element find → (220,406)      | ✅ About page loaded                |
+| 13   | Read device info          | Vision reads screenshot           | ✅ iPhone 17 Pro Max, iOS 26.3, 2TB |
 
 ## Key Findings
 
@@ -101,16 +101,16 @@ Midscene sends screenshots to a VLM and asks it to return pixel coordinates. Thi
 
 ### What we discovered works better: Hybrid
 
-| Aspect | Midscene.js | Our Experiment | Winner |
-|--------|-------------|----------------|--------|
-| Element locating | VLM coordinates (slow, imprecise) | WDA element find (instant, exact) | WDA |
-| Screen understanding | VLM (good) | Claude vision (good) | Tie |
-| Assertions | VLM evaluates screenshot | Claude reads screenshot | Tie |
-| Data extraction | VLM extracts from screenshot | Claude reads screenshot | Tie |
-| Speed per step | 3-10 seconds (VLM API call) | <1 second (WDA) + 0 for cached assertions | WDA |
-| Cost per step | VLM API charges | $0 for WDA, Claude session for assertions | Hybrid cheaper |
-| Canvas/no-DOM | VLM works (pure vision) | WDA fails (needs accessibility tree) | Midscene |
-| Determinism | Non-deterministic | Deterministic (WDA element find) | WDA |
+| Aspect               | Midscene.js                       | Our Experiment                            | Winner         |
+| -------------------- | --------------------------------- | ----------------------------------------- | -------------- |
+| Element locating     | VLM coordinates (slow, imprecise) | WDA element find (instant, exact)         | WDA            |
+| Screen understanding | VLM (good)                        | Claude vision (good)                      | Tie            |
+| Assertions           | VLM evaluates screenshot          | Claude reads screenshot                   | Tie            |
+| Data extraction      | VLM extracts from screenshot      | Claude reads screenshot                   | Tie            |
+| Speed per step       | 3-10 seconds (VLM API call)       | <1 second (WDA) + 0 for cached assertions | WDA            |
+| Cost per step        | VLM API charges                   | $0 for WDA, Claude session for assertions | Hybrid cheaper |
+| Canvas/no-DOM        | VLM works (pure vision)           | WDA fails (needs accessibility tree)      | Midscene       |
+| Determinism          | Non-deterministic                 | Deterministic (WDA element find)          | WDA            |
 
 ### When Pure Vision (Midscene) Still Wins
 

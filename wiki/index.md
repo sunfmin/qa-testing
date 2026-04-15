@@ -4,6 +4,7 @@ A structured, interlinked knowledge base for QA testing automation.
 
 ## Sources
 - [iOS E2E Testing Research 2026](sources/ios-e2e-testing-research-2026.md) — Comprehensive comparison of frameworks (Maestro, Appium, XCUITest, Detox) and AI-powered tools for automating E2E tests on existing iOS apps.
+- [WebDriverAgent Wiki](sources/webdriveragent-wiki.md) — Comprehensive WDA reference: architecture (XCTest HTTP server), full API endpoints, setup, troubleshooting, v12.0.0 (2026-04-14)
 
 ## Entities
 - [Maestro](entities/maestro.md) — YAML-based black-box mobile E2E testing, fastest setup, simulator-only for iOS
@@ -12,6 +13,7 @@ A structured, interlinked knowledge base for QA testing automation.
 - [Detox](entities/detox.md) — Gray-box E2E testing for React Native, in-process synchronization
 - [Drizz](entities/drizz.md) — Vision AI mobile testing, plain English tests, no selectors needed
 - [Midscene.js](entities/midscene-js.md) — ByteDance's vision-based UI automation: iOS/Android/Web/Desktop, YAML CLI, MCP servers, 12.5k stars
+- [WebDriverAgent (WDA)](entities/webdriveragent.md) — Device-side WebDriver server for iOS/tvOS, XCTest-based HTTP API on port 8100, core engine behind Appium iOS
 
 ## Concepts
 - [E2E Testing Strategy](concepts/e2e-testing-strategy.md) — Testing pyramid, what to test, execution guidelines for mobile E2E.

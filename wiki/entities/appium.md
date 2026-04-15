@@ -2,9 +2,9 @@
 title: Appium + WebdriverIO
 type: entity
 created: 2026-04-09
-updated: 2026-04-10
+updated: 2026-04-15
 tags: [testing, ios, android, e2e, cross-platform, black-box]
-sources: [ios-e2e-testing-research-2026]
+sources: [ios-e2e-testing-research-2026, webdriveragent-wiki]
 ---
 
 # Appium + WebdriverIO
@@ -83,6 +83,7 @@ Fully free and open source. Costs come from:
 
 ## See Also
 
+- [[webdriveragent]] — The device-side engine Appium uses for iOS automation
 - [[maestro]]
 - [[xcuitest]]
 - [[e2e-testing-strategy]]
@@ -167,6 +168,7 @@ class LoginScreen {
 
 ## 参见
 
+- [[webdriveragent]] — Appium iOS 自动化使用的设备端引擎
 - [[maestro]]
 - [[xcuitest]]
 - [[e2e-testing-strategy]]
