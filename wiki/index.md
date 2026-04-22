@@ -14,6 +14,7 @@ A structured, interlinked knowledge base for QA testing automation.
 - [Drizz](entities/drizz.md) — Vision AI mobile testing, plain English tests, no selectors needed
 - [Midscene.js](entities/midscene-js.md) — ByteDance's vision-based UI automation: iOS/Android/Web/Desktop, YAML CLI, MCP servers, 12.5k stars
 - [WebDriverAgent (WDA)](entities/webdriveragent.md) — Device-side WebDriver server for iOS/tvOS, XCTest-based HTTP API on port 8100, core engine behind Appium iOS
+- [Appium Mac2 Driver](entities/appium-mac2-driver.md) — macOS analog to WDA: XCTest-based WebDriverAgentMac on port 10100, borrows Facebook WDA source, Apache 2.0
 
 ## Concepts
 - [E2E Testing Strategy](concepts/e2e-testing-strategy.md) — Testing pyramid, what to test, execution guidelines for mobile E2E.
@@ -25,3 +26,4 @@ A structured, interlinked knowledge base for QA testing automation.
 - [Existing Vision Testing Tools](analyses/existing-vision-testing-tools.md) — Landscape: Midscene.js (12.6k stars), ios-simulator-mcp, appium-mcp, Claude Computer Use. Recommends pivot to composition over greenfield.
 - [Claude Vision + WDA iPhone Experiment](analyses/claude-vision-iphone-experiment.md) — Real device test on iPhone 17 Pro Max. Key finding: pure vision is bad at coordinates (100-200pt error), hybrid WDA+vision is optimal. Reframes Midscene vs Iris approach.
 - [Auto Bug Fix Workflow](analyses/auto-bug-fix-workflow.md) — 8-phase autonomous workflow: JIRA → reproduce on device with video → analyze source → write integration test → fix → verify with vision → create PR
+- [macOS Desktop Automation Landscape (2026)](analyses/macos-desktop-automation-landscape.md) — Layered catalog: Mac2 (XCTest), AX API (Hammerspoon/atomacos/Fazm), vision (UI-TARS/Computer Use). AX-first beats vision for desktop LLM agents (84% vs 72%)

@@ -122,3 +122,19 @@ Chronological record of wiki operations.
   - 5 element locator strategies ranked: accessibility id > class name > predicate > class chain > xpath
   - Can run independently of Appium — direct HTTP API, which is how Iris and auto-bug-fix use it
   - Known Flutter v3.22+ incompatibility (GitHub #922)
+
+## [2026-04-22] query | macOS Desktop Automation (WDA Equivalent)
+- User asked: is there a macOS equivalent of WDA?
+- Created wiki/entities/appium-mac2-driver.md — direct WDA analog, XCTest-based, port 10100, borrows Facebook WDA source
+- Created wiki/analyses/macos-desktop-automation-landscape.md — full landscape: Mac2 / AX API / vision
+- Updated wiki/index.md — new entity and analysis entries
+- Key findings:
+  - Appium Mac2 Driver (v3.3.1, 2026-04-15) contains a `WebDriverAgentMac` Xcode project explicitly forked from Facebook's WDA — the same `FB*` class hierarchy ported to AppKit
+  - Same 5 locator strategies as iOS WDA (accessibility id > class name > predicate > class chain > xpath)
+  - Adds rich `macos:` extensions not in WDA: `appleScript`, `deepLink`, `performAccessibilityAudit`, Touch Bar gestures, native screen recording (Xcode 15+)
+  - Single-session-per-Mac limitation (accessibility layer is single-threaded, HID is exclusive)
+  - Default port 10100 (WDA is 8100), no MJPEG equivalent (use screenshots or FFMPEG recording)
+  - Below Mac2: AX API — used by Hammerspoon, atomacos, Fazm, macos-use MCP
+  - Above Mac2: vision agents (Claude Computer Use, UI-TARS), but 2026 research shows AX-first beats vision-first for desktop agents: Fazm 8.2s/84% vs UI-TARS 11.4s/72%
+  - Validates iOS WDA+vision hybrid should port 1:1 to macOS by swapping WDA → Mac2
+  - Prerequisites pain: `Xcode Helper.app` accessibility permission, testmanagerd auth bypass, WDA target re-signing
