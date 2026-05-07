@@ -138,3 +138,20 @@ Chronological record of wiki operations.
   - Above Mac2: vision agents (Claude Computer Use, UI-TARS), but 2026 research shows AX-first beats vision-first for desktop agents: Fazm 8.2s/84% vs UI-TARS 11.4s/72%
   - Validates iOS WDA+vision hybrid should port 1:1 to macOS by swapping WDA → Mac2
   - Prerequisites pain: `Xcode Helper.app` accessibility permission, testmanagerd auth bypass, WDA target re-signing
+
+## [2026-04-22] query | Test Scenario Storage Patterns
+- User asked: how does the industry classically persist a test scenario?
+- Researched seven mainstream families with web-sourced examples (Maestro, Midscene, Chrome Recorder, Selenium IDE, Gherkin, Robot Framework, Computer Use trajectories)
+- Created wiki/analyses/test-scenario-storage-patterns.md — storage-format focus (not strategy), with tradeoff matrix
+- Updated wiki/index.md with new analysis entry
+- Key findings:
+  - Two industry-consensus answers to UI-drift replayability: selector fallback arrays (Chrome Recorder / Selenium IDE) vs semantic re-grounding per run (Midscene / Drizz)
+  - YAML + DSL (Maestro) is the LLM-friendliest author format — diff-clean, no brackets to balance, easy to emit
+  - JSON recorder formats are diff-hostile and LLM-edit-hostile despite their recordability
+  - Gherkin's step-definition abstraction buys nothing for LLM-authored tests
+  - Claude Computer Use JSONL trajectories are a recorded-not-authored format — useful as debug by-product, not source
+- Recommendation for Iris (informs drizz-clone-spec):
+  - Source = Maestro-style YAML with three layers per step: `intent:` (natural language) + `hint:` (optional WDA accessibilityId / text / bbox) + `assert:`
+  - Runtime = JSONL trajectory mirroring Computer Use (screenshot ref + model reasoning + action + result)
+  - Parameterization = CLI `-e KEY=VAL` + `${VAR}` + optional `examples:` data-driven array (Gherkin-inspired)
+  - Explicitly rejects: pure code, pure JSON recording, pure Gherkin, binary
