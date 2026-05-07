@@ -155,3 +155,24 @@ Chronological record of wiki operations.
   - Runtime = JSONL trajectory mirroring Computer Use (screenshot ref + model reasoning + action + result)
   - Parameterization = CLI `-e KEY=VAL` + `${VAR}` + optional `examples:` data-driven array (Gherkin-inspired)
   - Explicitly rejects: pure code, pure JSON recording, pure Gherkin, binary
+
+## [2026-05-07] research | AI-Driven macOS Automation 2026
+- User asked: research macOS automation tools that work well with AI and ingest into wiki
+- Companion piece to existing macos-desktop-automation-landscape (which is layered XCTest/AX/vision); this round focuses on the AI-integration shape
+- Created wiki/analyses/ai-driven-macos-automation-2026.md
+- Created entity pages: fazm, claude-computer-use, openai-codex-mac, ui-tars, macos-use
+- Updated wiki/index.md with 1 analysis + 5 entity entries
+- Key 2026 findings:
+  - Anthropic shipped Claude Computer Use as a Mac product on 2026-03-23 (Pro/Max only) — sandboxed user account, per-app allowlist, no Windows/Linux
+  - OpenAI shipped Codex Mac with Computer Use on 2026-04-16 — distinguishing feature is multi-agent parallel control alongside the developer
+  - OSWorld-Verified leaderboard now exceeds ~72% human baseline: Claude Mythos Preview 79.6%, GPT-5.5 78.7%, Claude Opus 4.7 78.0%
+  - Five paradigms identified: first-party closed (Anthropic, OpenAI), open-source AX-first (Fazm, macos-use), specialist VLM (UI-TARS), pure MCP server (mb-dev, mcp-remote-macos-use), neuro-symbolic (Simular Sai)
+  - AX-first vs vision-first tradeoff confirmed: Fazm self-reported 8.2s/84% vs UI-TARS 11.4s/72% on 25-task suite
+  - Anthropic's Opus 4.7 added a `zoom` action (`computer_20251124`) — implicit admission that pure full-frame inference loses precision on dense UIs
+  - UI-TARS (29.6k stars, Apache 2.0, v0.3.0 2025-11-04) is the only project shipping its own VLM family for UI control
+  - macos-use is Python (1.9k stars, MIT) — not to be confused with mcp-remote-macos-use (Swift)
+  - Simular AI raised $21.5M from Felicis on 2025-12-02 for neuro-symbolic Mac agent
+- Implications for our work:
+  - Iris on macOS: Mac2 still the test driver, Fazm's AX-first hybrid is the closest open-source reference architecture
+  - auto-bug-fix-workflow: Codex's multi-agent parallel could enable parallel reproducer agents, where Anthropic's sandbox is single-user
+  - Hybrid (AX grounding + vision assertion + frontier LLM planning) is the consensus 2026 shape — matches our iPhone validation

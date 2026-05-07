@@ -15,6 +15,11 @@ A structured, interlinked knowledge base for QA testing automation.
 - [Midscene.js](entities/midscene-js.md) — ByteDance's vision-based UI automation: iOS/Android/Web/Desktop, YAML CLI, MCP servers, 12.5k stars
 - [WebDriverAgent (WDA)](entities/webdriveragent.md) — Device-side WebDriver server for iOS/tvOS, XCTest-based HTTP API on port 8100, core engine behind Appium iOS
 - [Appium Mac2 Driver](entities/appium-mac2-driver.md) — macOS analog to WDA: XCTest-based WebDriverAgentMac on port 10100, borrows Facebook WDA source, Apache 2.0
+- [Fazm](entities/fazm.md) — Swift-native open-source macOS AI agent, AX-first hybrid + ScreenCaptureKit, BYO-LLM, voice-first via WhisperKit
+- [Claude Computer Use](entities/claude-computer-use.md) — Anthropic's first-party tool + Mac product (2026-03-23): screenshot-driven, Opus 4.7 zoom, ZDR-eligible
+- [OpenAI Codex Mac](entities/openai-codex-mac.md) — OpenAI's Mac agent (2026-04-16 update): multi-agent parallel control alongside the developer
+- [UI-TARS Desktop](entities/ui-tars.md) — ByteDance's open-source vision agent with own VLM family, 29.6k stars, MCP kernel, cross-platform
+- [macos-use (Browser Use)](entities/macos-use.md) — Python AX-tree library, sister to Browser Use, MIT, supports OpenAI/Anthropic/Gemini + local MLX
 
 ## Concepts
 - [E2E Testing Strategy](concepts/e2e-testing-strategy.md) — Testing pyramid, what to test, execution guidelines for mobile E2E.
@@ -28,3 +33,4 @@ A structured, interlinked knowledge base for QA testing automation.
 - [Auto Bug Fix Workflow](analyses/auto-bug-fix-workflow.md) — 8-phase autonomous workflow: JIRA → reproduce on device with video → analyze source → write integration test → fix → verify with vision → create PR
 - [macOS Desktop Automation Landscape (2026)](analyses/macos-desktop-automation-landscape.md) — Layered catalog: Mac2 (XCTest), AX API (Hammerspoon/atomacos/Fazm), vision (UI-TARS/Computer Use). AX-first beats vision for desktop LLM agents (84% vs 72%)
 - [Test Scenario Storage Patterns](analyses/test-scenario-storage-patterns.md) — Seven families (code, Gherkin, YAML/DSL, JSON recorder, keyword, binary, AI-intent) with tradeoffs. Recommends Maestro-YAML + JSONL trajectory + hint fields for Iris.
+- [AI-Driven macOS Automation (2026)](analyses/ai-driven-macos-automation-2026.md) — Five shapes (first-party, open-source AX, specialist VLM, MCP, neuro-symbolic). 2026 inflection: Anthropic+OpenAI shipped Mac products, OSWorld passed human baseline (79.6%).
